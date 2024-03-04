@@ -2,10 +2,14 @@ package com.tony.bookstore.dtos;
 
 import com.tony.bookstore.domain.Categoria;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class CategoriaDTO {
 
 	private Integer id;
+	@NotEmpty(message = "O campo NOME, não pode ser vazio")
 	private String nome;
+	@NotEmpty(message = "O campo DESCRIÇÃO, não pode ser vazio")
 	private String descricao;
 	
 	public CategoriaDTO() {

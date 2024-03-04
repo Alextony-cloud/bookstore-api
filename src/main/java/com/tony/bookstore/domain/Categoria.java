@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -20,7 +21,9 @@ public class Categoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotEmpty(message = "O campo NOME, não pode ser vazio")
 	private String nome;
+	@NotEmpty(message = "O campo DESCRIÇÃO, não pode ser vazio")
 	private String descricao;
 	
 	@OneToMany(mappedBy = "categoria")
