@@ -46,7 +46,7 @@ public class CategoriaService {
 		try {
 			repository.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
-			throw new com.tony.bookstore.service.exception.DataIntegrityViolationException("Categoria não pode ser deletada! Possui livros associados");
+			throw new com.tony.bookstore.service.exception.DataIntegrityViolationException("Categoria não pode ser deletada! Possui Categorias associados");
 		}
 	}
 }
