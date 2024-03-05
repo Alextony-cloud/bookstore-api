@@ -2,14 +2,22 @@ package com.tony.bookstore.dtos;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.tony.bookstore.domain.Livro;
+
+import jakarta.validation.constraints.NotEmpty;
 
 public class LivroDTO  implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	@NotEmpty(message = "O campo TITULO, não pode ser vazio")
+	@Length(min = 3, max = 50, message = "O campo TITULO deve ter entre 3 e 50 caracteres")
 	private String titulo;
+	@NotEmpty(message = "O campo NOME DO AUTOR, não pode ser vazio")
+	@Length(min = 3, max = 50, message = "O campo NOME DO AUTOR deve ter entre 3 e 50 caracteres")
 	private String nome_autor;
 	
 	public LivroDTO() {
